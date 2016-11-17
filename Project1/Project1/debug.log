@@ -1,0 +1,129 @@
+test2.c:25:23: error: unknown type name 'string'
+ void PrintingFunction(string outputString, int methodType)
+                       ^
+test2.c:50:1: error: unknown type name 'string'
+ string MonoalphabeticSubstitution(string completeInputText, int key, bool isProductCipher)
+ ^
+test2.c:50:35: error: unknown type name 'string'
+ string MonoalphabeticSubstitution(string completeInputText, int key, bool isProductCipher)
+                                   ^
+test2.c:152:1: error: unknown type name 'string'
+ string TranspositionCipher(string inputText, int key, bool isProductCipher)
+ ^
+test2.c:152:28: error: unknown type name 'string'
+ string TranspositionCipher(string inputText, int key, bool isProductCipher)
+                            ^
+test2.c:232:20: error: unknown type name 'string'
+ void ProductCipher(string completeInputText, int key)
+                    ^
+test2.c: In function 'monoAlphabeticDecrypt':
+test2.c:263:2: error: unknown type name 'string'
+  string tempString = "";
+  ^
+test2.c:263:22: warning: initialization makes integer from pointer without a cast [-Wint-conversion]
+  string tempString = "";
+                      ^
+test2.c:279:2: error: unknown type name 'string'
+  string decryptOutputText = "";
+  ^
+test2.c:279:29: warning: initialization makes integer from pointer without a cast [-Wint-conversion]
+  string decryptOutputText = "";
+                             ^
+test2.c:282:22: error: 'monoalphaSubsCipherText' undeclared (first use in this function)
+  for (int i = 0; i < monoalphaSubsCipherText.size(); i++)
+                      ^
+test2.c:282:22: note: each undeclared identifier is reported only once for each function it appears in
+test2.c:290:18: error: request for member 'length' in something not a structure or union
+    if (tempString.length() == 8)
+                  ^
+test2.c:294:6: error: 'wordsWithEightLength' undeclared (first use in this function)
+      wordsWithEightLength[wordsEightLengthCounter][j] = tempString[j];
+      ^
+test2.c:294:67: error: subscripted value is neither array nor pointer nor vector
+      wordsWithEightLength[wordsEightLengthCounter][j] = tempString[j];
+                                                                   ^
+test2.c:297:5: error: 'cout' undeclared (first use in this function)
+     cout << "8 letter words: " + tempString + "\n";
+     ^
+test2.c:297:45: error: invalid operands to binary + (have 'char *' and 'char *')
+     cout << "8 letter words: " + tempString + "\n";
+                                             ^
+test2.c:302:15: warning: assignment makes integer from pointer without a cast [-Wint-conversion]
+    tempString = "";
+               ^
+test2.c:351:67: warning: implicit declaration of function 'to_string' [-Wimplicit-function-declaration]
+      cout << "decrypt monoalphabetic substitution key answer: " + to_string(decryptKey) + "\n";
+                                                                   ^
+test2.c:351:89: error: invalid operands to binary + (have 'char *' and 'char *')
+      cout << "decrypt monoalphabetic substitution key answer: " + to_string(decryptKey) + "\n";
+                                                                                         ^
+test2.c:434:22: warning: assignment makes integer from pointer without a cast [-Wint-conversion]
+    decryptOutputText += " ";
+                      ^
+test2.c:438:2: warning: implicit declaration of function 'PrintingFunction' [-Wimplicit-function-declaration]
+  PrintingFunction(decryptOutputText, 4);
+  ^
+test2.c: In function 'main':
+test2.c:444:2: error: unknown type name 'string'
+  string completeInputText = "";
+  ^
+test2.c:444:29: warning: initialization makes integer from pointer without a cast [-Wint-conversion]
+  string completeInputText = "";
+                             ^
+test2.c:445:2: error: unknown type name 'string'
+  string tempLine = "";
+  ^
+test2.c:445:20: warning: initialization makes integer from pointer without a cast [-Wint-conversion]
+  string tempLine = "";
+                    ^
+test2.c:449:2: error: called object 'fileInputStream' is not a function or function pointer
+  fileInputStream("TextInput.txt","r");
+  ^
+test2.c:23:7: note: declared here
+ FILE *fileInputStream,*fileOutputStream;
+       ^
+test2.c:450:2: error: called object 'fileOutputStream' is not a function or function pointer
+  fileOutputStream("cipherText.txt","w");
+  ^
+test2.c:23:24: note: declared here
+ FILE *fileInputStream,*fileOutputStream;
+                        ^
+test2.c:453:21: error: request for member 'is_open' in something not a structure or union
+  if (fileInputStream.is_open())
+                     ^
+test2.c:456:18: warning: passing argument 1 of 'getline' from incompatible pointer type [-Wincompatible-pointer-types]
+   while (getline(fileInputStream, tempLine))
+                  ^
+In file included from /usr/include/stdio.h:29:0,
+                 from test2.c:2:
+/usr/include/sys/stdio.h:37:9: note: expected 'char **' but argument is of type 'FILE * {aka struct __sFILE64 *}'
+ ssize_t _EXFUN(getline, (char **, size_t *, FILE *));
+         ^
+test2.c:456:35: warning: passing argument 2 of 'getline' makes pointer from integer without a cast [-Wint-conversion]
+   while (getline(fileInputStream, tempLine))
+                                   ^
+In file included from /usr/include/stdio.h:29:0,
+                 from test2.c:2:
+/usr/include/sys/stdio.h:37:9: note: expected 'size_t * {aka long unsigned int *}' but argument is of type 'int'
+ ssize_t _EXFUN(getline, (char **, size_t *, FILE *));
+         ^
+test2.c:456:10: error: too few arguments to function 'getline'
+   while (getline(fileInputStream, tempLine))
+          ^
+In file included from /usr/include/stdio.h:29:0,
+                 from test2.c:2:
+/usr/include/sys/stdio.h:37:9: note: declared here
+ ssize_t _EXFUN(getline, (char **, size_t *, FILE *));
+         ^
+test2.c:458:22: warning: assignment makes integer from pointer without a cast [-Wint-conversion]
+    completeInputText += tempLine + " ";
+                      ^
+test2.c:462:2: warning: implicit declaration of function 'MonoalphabeticSubstitution' [-Wimplicit-function-declaration]
+  MonoalphabeticSubstitution(completeInputText, MONOALPHABETICKEY, false);
+  ^
+test2.c:464:2: warning: implicit declaration of function 'TranspositionCipher' [-Wimplicit-function-declaration]
+  TranspositionCipher(completeInputText, TRANSPOSITIONKEY, false);
+  ^
+test2.c:466:2: warning: implicit declaration of function 'ProductCipher' [-Wimplicit-function-declaration]
+  ProductCipher(completeInputText, PRODUCTKEY);
+  ^
